@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Magdy - Assignment 12 Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/coswise/hicon-css@latest/web-fonts/hicon.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark.css">
+</head>
+
+<body>
+    <header class="py-3 top-0 position-sticky">
+        <div class="container">
+            <div class="inner d-flex justify-content-evenly align-items-center">
+                <label class="switch me-3">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="slider"></span>
+                </label>
+                <input type="search" name="search" id="searchInput" class="form-control w-50 my-3 my-md-1 mx-md-4"
+                    placeholder="Search a country">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="mt-2">
+            <div class="container">
+                <div class="inner">
+                    <div class="row gx-4 gy-3">
+                        <div class="col-lg-5">
+                            <div class="item text-center px-5 py-4">
+                                <h1 id="cityName" class="h3 mb-5 fw-bold"></h1>
+                                <h3 id="cityTime" class="m-0 fw-bolder"></h3>
+                                <p id="cityDate" class="mb-3"></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="item py-2 px-4">
+                                <div class="row align-items-center mb-3">
+                                    <div class="col-sm-4 temp fw-semibold">
+                                        <h4 id="temp" class="h1 fw-bold deg m-0 text-center"></h4>
+                                        <p class="m-0 d-flex justify-content-evenly align-items-center">
+                                            Feels like: <span id="feelsLike" class="fs-2"></span>
+                                        </p>
+                                        <div class="d-flex flex-sm-column justify-content-around align-items-center">
+                                            <div class="d-flex justify-content-center mt-3 mb-2">
+                                                <i class="h h-sunrise" aria-hidden="true"></i>
+                                                <div id="sunrise-info" class="ms-2">
+                                                    <h5 class="fw-bold fs-5 m-0">Sunrise</h5>
+                                                    <p id="sunriseTime" class="fw-semibold fs-6 m-0"></p>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-center">
+                                                <i class="h h-sunset" aria-hidden="true"></i>
+                                                <div id="sunset-info" class="ms-2">
+                                                    <h5 class="fw-bold fs-5 m-0">Sunset</h5>
+                                                    <p id="sunsetTime" class="fw-semibold fs-6"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 text-center my-4 my-md-0">
+                                        <img src="" class="mb-sm-5 w-75" id="weatherConditionImg" alt="">
+                                        <h4 id="weatherConditionName" class="h2 fw-bold mt-sm-3 mb-0"></h4>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="row">
+                                            <div id="humidity" class="col-sm-6 col-3 text-center p-0">
+                                                <i class="h h-drop" aria-hidden="true"></i>
+                                                <p id="humidityValue" class="fs-5 fw-semibold"></p>
+                                                <p class="fw-medium fs-6">Humidity</p>
+                                            </div>
+                                            <div id="windSpeed" class="col-sm-6 col-3 text-center p-0">
+                                                <i class="h h-wind" aria-hidden="true"></i>
+                                                <p id="windSpeedValue" class="fs-5 fw-semibold"></p>
+                                                <p class="fw-medium fs-6">Wind Speed</p>
+                                            </div>
+                                            <div id="pressure" class="col-sm-6 col-3 text-center p-0">
+                                                <i class="h h-high-performance" aria-hidden="true"></i>
+                                                <p id="pressureValue" class="fs-5 fw-semibold"></p>
+                                                <p class="fw-medium fs-6">Pressure</p>
+                                            </div>
+                                            <div id="uv" class="col-sm-6 col-3 text-center p-0">
+                                                <i class="h h-sun" aria-hidden="true"></i>
+                                                <p id="uvValue" class="fs-5 fw-semibold"></p>
+                                                <p class="fw-medium fs-6">UV</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="item py-3 px-2 text-center">
+                                <h4 class="text-capitalize fw-bold fs-3">3 days forecast</h4>
+                                <table class="table table-borderless table-sm m-0">
+                                    <tbody id="forecastTableBody">
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="item px-4 py-3 text-center">
+                                <h4 class="text-capitalize fw-bold fs-3">hourly forecast</h4>
+                                <div class="row justify-content-center g-3" id="hourlyForecast">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="my-5">
+        <div class="container">
+            <div class="text-center py-4">
+                <p id="copyright">Design made by <a href="https://www.figma.com/@aboutalis" class="link-light">Anastasios Periklis Boutalis</a></p>
+                <a href="https://www.figma.com/@aboutalis" id="designLink" class="link-light">Weather Dashboard</a>
+                <p>Powered by <a href="https://www.weatherapi.com/" class="link-light" title="Free Weather API">WeatherAPI.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

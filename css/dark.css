@@ -1,0 +1,10 @@
+:root .dark-mode{
+    --bg: #383838;
+    --gradient-bg: linear-gradient(to top left, rgba(56, 56, 56, 1) 0%, rgba(158, 158, 158, 1) 100%);
+    --item-bg: #444;
+    --deg-gradient: linear-gradient(200deg, #292929 35%, #fff 95%);
+    --txt-color: #fff;
+    --bs-white-rgb: 255,255,255;
+    --bs-light-rgb: 255,255,255;
+
+}

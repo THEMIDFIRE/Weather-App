@@ -1,0 +1,148 @@
+:root {
+  --bg: #466173;
+  --gradient-bg: linear-gradient(to top left, #466173 33%, #ffffff 100%);
+  --item-bg: #d9d9d9;
+  --deg-gradient: linear-gradient(to top right, #292929 25%, #fff 100%);
+  --txt-color: #292929;
+  --bs-white-rgb: 41, 41, 41;
+  --bs-light-rgb: 41, 41, 41;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  color: var(--txt-color);
+}
+
+body {
+  color: var(--txt-color);
+  font-family: Poppins, sans-serif;
+  background: var(--gradient-bg) center no-repeat fixed;
+  height: 100dvh;
+}
+
+p {
+  margin: 0;
+}
+
+.switch {
+  --secondary-container: #d9d9d9;
+  --primary: #111;
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.7em;
+  height: 1.8em;
+}
+
+.switch input {
+  display: none;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  cursor: pointer;
+  position: absolute;
+  inset: 0;
+  height: 35px;
+  width: clamp(100%, 80px, 100px);
+  background-color: #d9d9d9;
+  transition: 0.2s;
+  border: 1px solid #000;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 25px;
+  width: 25px;
+  border-radius: 20px;
+  left: 25%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #111;
+  transition: 0.2s;
+}
+
+#currentLocationBtn {
+  font-size: 1rem;
+}
+
+input:checked + .slider::before {
+  background-color: var(--primary);
+}
+
+input:checked + .slider {
+  background-color: var(--secondary-container);
+  border: 0 solid;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--secondary-container);
+}
+
+input:checked + .slider:before {
+  transform: translate(100%, -50%);
+}
+
+.item {
+  background-color: var(--item-bg);
+  border-radius: 30px;
+  box-shadow: 10px 10px 4px 0 rgba(0, 0, 0, 0.49);
+}
+
+.item h1 {
+  font-size: 2.25rem;
+}
+
+.item h3 {
+  font-size: 4rem;
+}
+
+.item p {
+  font-size: 1.25rem;
+}
+
+.temp {
+  color: #292929;
+}
+
+.deg {
+  background: var(--deg-gradient);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 4rem;
+}
+
+.currentTemp {
+  font-size: 9rem;
+  color: #ff0;
+  background-color: #ff0;
+  background-clip: text;
+  filter: drop-shadow(0 4px 4px #000);
+}
+
+.table {
+  --bs-body-bg: transparent;
+  --bs-table-bg: var(--bs-body-bg);
+}
+
+tr {
+  vertical-align: middle;
+}
+
+.dayForecast {
+  color: var(--txt-color);
+}
+
+.hourlyForecastItem {
+  background: linear-gradient(140deg, #f88508 0, #f6fad9 100%);
+}
+
+.night {
+  background: linear-gradient(140deg, #443d64 0, #6582c6 80%);
+}
